@@ -4,13 +4,15 @@
     </head>
     <body>
         <div>
-            <h1><a href="">TA FUNFANDOOOO!!</a></h1>
-        </div>
+    <h1><a href="/">Django Girls Blog</a></h1>
+		</div>
 
-        <div>
-            <p>published: 20.05.2017, 15:32</p>
-            <h2><a href=""> EVENTO DJANGO GIRLS</a></h2>
-            <p>A BAGAÇA TA NO AR GENTEEE <br> ALELUIAAAAAAAAA </p>
-        </div>
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
     </body>
 </html>
